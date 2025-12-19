@@ -1,0 +1,72 @@
+.calendar-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.calendar-page .calendar-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding-left: 100px;
+}
+
+.calendar-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.calendar-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.calendar-toolbar h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  min-width: 200px;
+}
+
+.calendar-toolbar button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.calendar-toolbar button:hover {
+  background: var(--bg-secondary);
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.view-toggle button.active {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+

@@ -1,0 +1,31 @@
+.google-connect {
+  /* Margin handled by navbar gap */
+}
+
+.google-connect-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.google-connect-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-primary);
+}
+
+.google-connect-btn.connected {
+  border-color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.google-connect-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+

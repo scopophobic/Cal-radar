@@ -15,7 +15,7 @@ interface RadarCanvasProps {
 }
 
 const RadarCanvas: React.FC<RadarCanvasProps> = ({ now }) => {
-  const { events, todos, setHoveredBlip, setSelectedBlip } = useAppStore()
+  const { events, todos, selectedBlip, setHoveredBlip, setSelectedBlip } = useAppStore()
   const { theme } = useThemeStore()
   const [sweepAngle, setSweepAngle] = useState(0)
   const [dimensions, setDimensions] = useState({ width: 800, height: 800 })
@@ -27,12 +27,13 @@ const RadarCanvas: React.FC<RadarCanvasProps> = ({ now }) => {
   const strokeColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'
   const textColor = theme === 'dark' ? '#ffffff' : '#000000'
 
-  // Calculate canvas dimensions
+  // Calculate canvas dimensions - use full container space
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
         const { width, height } = containerRef.current.getBoundingClientRect()
-        const size = Math.min(width, height) * 0.9
+        // Use the full container space - side panel overlays on top
+        const size = Math.min(width, height) * 0.95
         setDimensions({ width: size, height: size })
       }
     }

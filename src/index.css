@@ -6,6 +6,7 @@
 
 :root {
   --bg-primary: #ffffff;
+  --bg-primary-rgb: 255, 255, 255;
   --bg-secondary: #f5f5f5;
   --text-primary: #000000;
   --text-secondary: #666666;
@@ -16,6 +17,7 @@
 
 [data-theme='dark'] {
   --bg-primary: #000000;
+  --bg-primary-rgb: 0, 0, 0;
   --bg-secondary: #0a0a0a;
   --text-primary: #ffffff;
   --text-secondary: #999999;
