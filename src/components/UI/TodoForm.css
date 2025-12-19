@@ -1,0 +1,156 @@
+.todo-form-toggle {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.todo-form-toggle:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-primary);
+}
+
+.todo-form-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 100;
+}
+
+.todo-form {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 340px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.todo-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.todo-form-header h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.todo-form-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-weight: 300;
+}
+
+.todo-form-close:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.todo-form-field {
+  margin-bottom: 1.25rem;
+}
+
+.todo-form-field label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.todo-form-field input,
+.todo-form-field select,
+.todo-form-field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.todo-form-field input:focus,
+.todo-form-field select:focus,
+.todo-form-field textarea:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.todo-form-field textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.todo-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.todo-form-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.todo-form-actions button[type='button']:hover {
+  background: var(--bg-secondary);
+}
+
+.todo-form-actions button[type='submit'] {
+  border-color: var(--text-primary);
+}
+
+.todo-form-actions button[type='submit']:hover {
+  background: var(--bg-secondary);
+}
