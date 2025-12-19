@@ -1,2 +1,4 @@
+Cal Radar
 
-This is radar based theme for calendar reminder
+In a radar format, visuallize calender and To do.
+
