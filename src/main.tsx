@@ -5,6 +5,8 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import RadarPage from './pages/RadarPage'
 import CalendarPage from './pages/CalendarPage'
 import TodosPage from './pages/TodosPage'
+import LoginPage from './pages/LoginPage'
+import ProfilePage from './pages/ProfilePage'
 import './index.css'
 
 const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || ''
@@ -18,6 +20,8 @@ const AppWrapper: React.FC = () => {
             <Route path="/" element={<RadarPage />} />
             <Route path="/calendar" element={<CalendarPage />} />
             <Route path="/todos" element={<TodosPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </BrowserRouter>
       </GoogleOAuthProvider>
@@ -30,6 +34,8 @@ const AppWrapper: React.FC = () => {
         <Route path="/" element={<RadarPage />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/todos" element={<TodosPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   )
