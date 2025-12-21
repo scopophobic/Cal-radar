@@ -1,10 +1,10 @@
 .left-sidebar {
   position: fixed;
-  left: 0;
-  top: 50%;
+  left: 1rem;
+  top: calc(50% + 30px); /* Account for navbar height */
   transform: translateY(-50%);
-  z-index: 100;
-  width: 80px;
+  z-index: 1500;
+  width: 100px;
 }
 
 .sidebar-nav {
@@ -15,20 +15,27 @@
   background: var(--bg-primary);
   border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  max-height: 85vh;
+  overflow-y: auto;
+  min-width: 100px;
 }
 
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: 0.35rem;
   padding: 0.75rem 0.5rem;
   text-decoration: none;
   color: var(--text-secondary);
   border-radius: 8px;
   transition: all 0.2s;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-item:hover {
@@ -54,14 +61,102 @@
 }
 
 .nav-icon {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
 }
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.75rem 0;
+  width: 100%;
+}
+
+.sidebar-section {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-section-title {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-google-btn {
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sidebar-google-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-primary);
+}
+
+.sidebar-google-btn.small {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.sidebar-google-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.status-indicator {
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-text {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  width: 100%;
+}
+
 

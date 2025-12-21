@@ -5,11 +5,12 @@
   border-radius: 8px;
   padding: 0.75rem 1rem;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 2000;
   min-width: 160px;
   transform: translate(-50%, calc(-100% - 10px));
   animation: fadeIn 0.15s ease-out;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
 }
 
 @keyframes fadeIn {

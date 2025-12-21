@@ -27,13 +27,15 @@ const RadarCanvas: React.FC<RadarCanvasProps> = ({ now }) => {
   const strokeColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'
   const textColor = theme === 'dark' ? '#ffffff' : '#000000'
 
-  // Calculate canvas dimensions - use full container space
+  // Calculate canvas dimensions - use full viewport space
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect()
-        // Use the full container space - side panel overlays on top
-        const size = Math.min(width, height) * 0.95
+        // Use full viewport dimensions, accounting for navbar (60px)
+        const viewportWidth = window.innerWidth
+        const viewportHeight = window.innerHeight - 60 // Account for navbar
+        // Use 98% to ensure it fits with minimal padding
+        const size = Math.min(viewportWidth, viewportHeight) * 0.98
         setDimensions({ width: size, height: size })
       }
     }
@@ -50,8 +52,11 @@ const RadarCanvas: React.FC<RadarCanvasProps> = ({ now }) => {
     return () => clearInterval(interval)
   }, [])
 
-  const centerX = dimensions.width / 2
-  const centerY = dimensions.height / 2
+  // Ensure minimum dimensions
+  const canvasWidth = Math.max(dimensions.width, 400)
+  const canvasHeight = Math.max(dimensions.height, 400)
+  const centerX = canvasWidth / 2
+  const centerY = canvasHeight / 2
   const maxRadius = Math.min(centerX, centerY) * 0.85 * scale
 
   // Handle zoom
@@ -187,8 +192,8 @@ const RadarCanvas: React.FC<RadarCanvasProps> = ({ now }) => {
     <div ref={containerRef} className="radar-container">
       <Stage
         ref={stageRef}
-        width={dimensions.width}
-        height={dimensions.height}
+        width={canvasWidth}
+        height={canvasHeight}
         onWheel={handleWheel}
         draggable
         onDragEnd={(e) => {

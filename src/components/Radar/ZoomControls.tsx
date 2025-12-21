@@ -25,3 +25,4 @@ const ZoomControls: React.FC<ZoomControlsProps> = ({ onZoom, onReset, scale }) =
 
 export default ZoomControls
 
+

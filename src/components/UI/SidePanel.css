@@ -2,16 +2,16 @@
   position: fixed;
   right: 0;
   top: 0;
-  width: 360px;
+  width: 380px;
   height: 100vh;
   background: var(--bg-primary);
   border-left: 1px solid var(--border);
-  z-index: 1000;
+  z-index: 2000;
   display: flex;
   flex-direction: column;
-  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
   animation: slideIn 0.2s ease-out;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 @keyframes slideIn {
